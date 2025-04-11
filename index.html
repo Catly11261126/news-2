@@ -8,155 +8,99 @@
   <meta name="CocoaVersion" content="2113.4">
   <style type="text/css">
     p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'PingFang TC'; color: #000000; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'PingFang TC'; color: #000000; -webkit-text-stroke: #000000}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
     span.s1 {font-kerning: none}
-    span.s2 {font: 12.0px Helvetica; font-kerning: none}
-    span.s3 {font: 12.0px 'PingFang TC'; font-kerning: none}
+    span.s2 {font: 12.0px 'PingFang TC'; font-kerning: none}
+    span.s3 {font: 12.0px Helvetica; font-kerning: none}
   </style>
 </head>
 <body>
-<p class="p1"><span class="s1">import { useState } from "react";</span></p>
-<p class="p1"><span class="s1">import { Button } from "@/components/ui/button";</span></p>
-<p class="p1"><span class="s1">import { Card, CardContent } from "@/components/ui/card";</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">const vtuberStory = [</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>id: 1,</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span>text: "</span><span class="s1">你是一位個性內向但擁有強烈分享欲的年輕人，剛開始接觸</span><span class="s2">Vtuber</span><span class="s1">文化。你會怎麼做？</span><span class="s2">",</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>choices: [</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">試著自己學習建模和直播技巧</span><span class="s1">", nextId: 2 },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">委託繪師與建模師打造角色</span><span class="s1">", nextId: 3 }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>]</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>id: 2,</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span>text: "</span><span class="s1">你成為了自耕農</span><span class="s2">V</span><span class="s1">，雖然一切親力親為，但進度緩慢且技術壓力大。你是否考慮改變策略？</span><span class="s2">",</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>choices: [</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">堅持自學</span><span class="s1">", nextId: 4 },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">轉為委託專業人士</span><span class="s1">", nextId: 3 }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>]</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>id: 3,</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span>text: "</span><span class="s1">你成功打造出理想角色形象，並開始嘗試直播。你要先做哪種內容？</span><span class="s2">",</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>choices: [</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">遊戲實況</span><span class="s1">", nextId: 5 },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">雜談直播</span><span class="s1">", nextId: 6 }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>]</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>id: 4,</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span>text: "</span><span class="s1">自學讓你累積了經驗與成就感，但進度仍慢，觀眾也有限。你決定</span><span class="s2">…",</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>choices: [</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">持續優化內容，慢慢累積粉絲</span><span class="s1">", nextId: 7 },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">重新定位風格與經營策略</span><span class="s1">", nextId: 8 }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>]</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>id: 5,</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span>text: "</span><span class="s1">你在實況中逐漸找到風格，也吸引部分觀眾互動。你的下一步是？</span><span class="s2">",</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>choices: [</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">嘗試歌回內容</span><span class="s1">", nextId: 9 },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">規劃固定直播節目表</span><span class="s1">", nextId: 10 }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>]</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>id: 6,</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span>text: "</span><span class="s1">雜談中你分享自己的故事，獲得許多共鳴。有人留言鼓勵你嘗試更多形式。</span><span class="s2">",</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>choices: [</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">製作唱歌影片</span><span class="s1">", nextId: 9 },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">開設心理陪聊直播</span><span class="s1">", nextId: 11 }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>]</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>id: 7,</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span>text: "</span><span class="s1">你成為社群中小有名氣的</span><span class="s2">V</span><span class="s1">，但感受到工作與生活界線模糊，開始出現疲憊感。</span><span class="s2">",</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>choices: [</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">暫停一段時間調整身心</span><span class="s1">", nextId: 12 },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">尋求企業合作分擔壓力</span><span class="s1">", nextId: 13 }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>]</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>id: 8,</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span>text: "</span><span class="s1">你轉型成心理陪聊型</span><span class="s2">V</span><span class="s1">，反而吸引更多內向觀眾關注。你感受到</span><span class="s2">…",</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>choices: [</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">創作帶來的成就與壓力並存</span><span class="s1">", nextId: 12 },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">希望未來能幫助更多人</span><span class="s1">", nextId: 14 }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>]</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>id: 9,</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span>text: "</span><span class="s1">你展現了出色的演唱實力，觀眾數量暴增！但你開始擔心嗓音與作息壓力。</span><span class="s2">",</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>choices: [</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">設立休息日與健康計畫</span><span class="s1">", nextId: 14 },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">將演唱轉為錄播影片降低負擔</span><span class="s1">", nextId: 13 }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>]</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>id: 10,</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span>text: "</span><span class="s1">你維持穩定直播節奏，觀眾忠誠度提升，但也感到創作瓶頸。</span><span class="s2">",</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>choices: [</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">參與其他</span><span class="s1">V</span><span class="s3">聯動找靈感</span><span class="s1">", nextId: 15 },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">舉辦粉絲互動企畫</span><span class="s1">", nextId: 16 }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>]</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>id: 11,</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span>text: "</span><span class="s1">你的陪聊直播吸引了許多同樣內向的觀眾，你感受到心理連結的力量。你會</span><span class="s2">…",</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>choices: [</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">開始與心理諮商師合作</span><span class="s1">", nextId: 14 },</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ text: "</span><span class="s3">出版自己的心路歷程電子書</span><span class="s1">", nextId: 16 }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>]</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>id: 12,</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span>text: "</span><span class="s1">經過一段休息，你重新找回創作動力。你更懂得照顧自己，也更理解粉絲。故事結束。</span><span class="s2">",</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>choices: []</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>id: 13,</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span>text: "</span><span class="s1">與企業合作雖然提供穩定收入與曝光，但也面臨限制與壓力。你在學習平衡之道。故事結束。</span><span class="s2">",</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>choices: []</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>id: 14,</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span>text: "</span><span class="s1">你持續創作並投入公益合作，在</span><span class="s2">V</span><span class="s1">圈內建立獨特地位。故事結束。</span><span class="s2">",</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>choices: []</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>id: 15,</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span>text: "</span><span class="s1">與其他</span><span class="s2">V</span><span class="s1">合作讓你認識不同風格與靈感，突破創作僵局。故事結束。</span><span class="s2">",</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>choices: []</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>id: 16,</span></p>
-<p class="p3"><span class="s2"><span class="Apple-converted-space">    </span>text: "</span><span class="s1">你與粉絲互動更緊密，也發掘了更多議題可探討。你持續經營並樂在其中。故事結束。</span><span class="s2">",</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>choices: []</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p1"><span class="s1">];</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">export default function VtuberInteractiveGame() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const [currentId, setCurrentId] = useState(1);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const scene = vtuberStory.find((s) =&gt; s.id === currentId);</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return (</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div className="p-6 max-w-2xl mx-auto space-y-4"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;Card&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;CardContent className="text-lg py-6"&gt;{scene?.text}&lt;/CardContent&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/Card&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div className="flex flex-col gap-2"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{scene?.choices.map((choice, index) =&gt; (</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;Button key={index} onClick={() =&gt; setCurrentId(choice.nextId)}&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{choice.text}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/Button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>))}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{scene?.choices.length === 0 &amp;&amp; (</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;Button onClick={() =&gt; setCurrentId(1)}&gt;</span><span class="s3">重新開始</span><span class="s1">&lt;/Button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>);</span></p>
-<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="zh-Hant"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;</span><span class="s2">我，是誰？在虛擬世界中重塑自我</span><span class="s1">&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>body {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-family: 'Noto Sans TC', sans-serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-color: #111;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #f0f0f0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>header, section, footer {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding: 2rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>max-width: 800px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin: auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>h1, h2 {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #00ffc8;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.choice-button {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-color: #222;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #fff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border: 1px solid #555;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding: 1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin: 0.5rem 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>cursor: pointer;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.choice-button:hover {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-color: #00ffc8;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #111;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.hidden {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;header&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h1&gt;</span><span class="s2">我，是誰？</span><span class="s1">&lt;/h1&gt;</span></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span>&lt;p&gt;</span><span class="s1">沒有人會愛上完整的我</span><span class="s3">…</span><span class="s1">但在這裡，你能選擇你想成為誰。</span><span class="s3">&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button class="choice-button" onclick="startGame()"&gt;</span><span class="s2">進入體驗</span><span class="s1">&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;section id="module1" class="hidden"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h2&gt;</span><span class="s2">你想成為</span><span class="s1">Vtuber</span><span class="s2">嗎？</span><span class="s1">&lt;/h2&gt;</span></p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span>&lt;p&gt;</span><span class="s1">選擇你作為中之人的個性：</span><span class="s3">&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button class="choice-button" onclick="choosePersona('</span><span class="s2">內向</span><span class="s1">')"&gt;</span><span class="s2">內向</span><span class="s1">&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button class="choice-button" onclick="choosePersona('</span><span class="s2">外向</span><span class="s1">')"&gt;</span><span class="s2">外向</span><span class="s1">&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button class="choice-button" onclick="choosePersona('</span><span class="s2">創作者型</span><span class="s1">')"&gt;</span><span class="s2">創作者型</span><span class="s1">&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button class="choice-button" onclick="choosePersona('</span><span class="s2">表演型</span><span class="s1">')"&gt;</span><span class="s2">表演型</span><span class="s1">&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;section id="result" class="hidden"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h2&gt;</span><span class="s2">你的</span><span class="s1">Vtuber</span><span class="s2">個性檔案</span><span class="s1">&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p id="personaResult"&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button class="choice-button" onclick="restart()"&gt;</span><span class="s2">重新選擇</span><span class="s1">&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;footer&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;© 2025 </span><span class="s2">我，是誰？</span><span class="s1"> </span><span class="s2">虛擬身份探索遊戲</span><span class="s1">&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function startGame() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.querySelector('header').classList.add('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('module1').classList.remove('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function choosePersona(type) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('module1').classList.add('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('result').classList.remove('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('personaResult').textContent =</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>`</span><span class="s2">你選擇的是「</span><span class="s1">${type}</span><span class="s2">」型</span><span class="s1"> Vtuber</span><span class="s2">，你可能擅長</span><span class="s1">...</span><span class="s2">（可根據未來擴充調整）</span><span class="s1">`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function restart() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('result').classList.add('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('module1').classList.remove('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
 </body>
 </html>
